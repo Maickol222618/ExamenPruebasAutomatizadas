@@ -1,0 +1,19 @@
+Gherkin:
+```
+Dado estoy en la página de bienvenida
+Cuando selecciono la categoría "Clothes" y subcategoría "Men"
+Entonces debería ver la página de productos
+```
+ 
+Java:
+```
+@Test
+public void testIngresarCategoria() {
+  driver.get("(link unavailable)");
+  WebElement categoriaLink = driver.findElement(By.linkText("Clothes"));
+categoriaLink.click();
+  WebElement subcategoriaLink = driver.findElement(By.linkText("Men"));
+subcategoriaLink.click();
+  Assert.assertTrue(driver.findElement(By.xpath("//h1[@class='categoria-titulo']")).isDisplayed());
+}
+```

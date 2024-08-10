@@ -1,0 +1,21 @@
+Gherkin:
+```
+Dado estoy en la página de inicio
+Cuando ingreso mi usuario y clave válidos
+Entonces debería ver la página de bienvenida
+```
+ 
+Java:
+```
+@Test
+public void testInicioSesion() {
+  driver.get("(link unavailable)");
+WebElement usuarioInput = driver.findElement(By.name("usuario"));
+  usuarioInput.sendKeys("mi_usuario");
+WebElement claveInput = driver.findElement(By.name("clave"));
+  claveInput.sendKeys("mi_clave");
+  WebElement loginButton = driver.findElement(By.xpath("//button[@type='submit']"));
+loginButton.click();
+  Assert.assertTrue(driver.findElement(By.xpath("//h1[@class='bienvenida']")).isDisplayed());
+}
+```

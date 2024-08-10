@@ -1,0 +1,20 @@
+Gherkin:
+```
+Dado estoy en la página de carrito
+Cuando valido el contenido del carrito
+Entonces debería ver los productos agregados correctamente
+```
+ 
+Java:
+```
+@Test
+public void testValidacionesCarrito() {
+  driver.get("(link unavailable)");
+  WebElement carritoLink = driver.findElement(By.linkText("Carrito"));
+carritoLink.click();
+  Assert.assertTrue(driver.findElement(By.xpath("//h1[@class='carrito-titulo']")).isDisplayed());
+  Assert.assertTrue(driver.findElement(By.xpath("//td[@class='producto-nombre']")).isDisplayed());
+  Assert.assertTrue(driver.findElement(By.xpath("//td[@class='producto-precio']")).isDisplayed());
+  Assert.assertTrue(driver.findElement(By.xpath("//td[@class='producto-cantidad']")).isDisplayed());
+}
+```

@@ -1,0 +1,19 @@
+Gherkin:
+```
+Dado estoy en la página de productos
+Cuando agrego un producto al carrito
+Entonces debería ver un mensaje de confirmación
+```
+ 
+Java:
+```
+@Test
+public void testAgregarCarrito() {
+  driver.get("(link unavailable)");
+  WebElement productoLink = driver.findElement(By.linkText("Producto 1"));
+productoLink.click();
+  WebElement agregarCarritoButton = driver.findElement(By.xpath("//button[@type='submit']"));
+agregarCarritoButton.click();
+  Assert.assertTrue(driver.findElement(By.xpath("//div[@class='mensaje-confirmacion']")).isDisplayed());
+}
+```
